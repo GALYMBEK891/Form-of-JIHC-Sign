@@ -23,7 +23,13 @@ body {
 
 }
 
-
+.college-info {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #333;
+    margin-bottom: 30px;
+    text-align: center;
+}
 
 .contact {
     background-color: white;
@@ -141,12 +147,20 @@ form button:active {
     #logojihc {
         width: 70px;
     }
+    .college-info {
+        font-size: 16px;
+        padding: 0 10px;
+    }
 }
 
 @media (max-width: 480px) {
     .contact {
         padding: 20px;
         border-radius: 20px;
+    }
+    .college-info {
+        font-size: 15px;
+        line-height: 1.5;
     }
 
     #logojihc {
@@ -169,5 +183,9 @@ form button:active {
 
     #logojihc {
         width: 50px;
+    }
+    .college-info {
+        font-size: 14px;
+        margin-bottom: 20px;
     }
 }
