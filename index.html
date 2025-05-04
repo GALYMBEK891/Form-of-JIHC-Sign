@@ -3,37 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Form of the jihc</title>
+    <title>Form of the JIHC</title>
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <section class="contact">
-        <img id="logojihc" src="./jihc-logo-ru-png-v3.png">
-        <h2>Добро пожаловать!</h2>
-
-
-    <div class="college-info">
-        <p><strong>Жамбылский Инновационный Высший Колледж</strong> — это современный колледж, предоставляющий качественное образование в приоритетных сферах.</p>
-    </div>
-            
-        <form id="form">
-            <div class="box">
-                <div class="box-field field">
-                    <input type="text" placeholder="Имя" id="name" name="name" class="item">
-                    <div class="error">Пожалуйста, введите имя</div>
-                </div>
-                <div class="box-field field">
-                    <input type="email" placeholder="Email" id="email" name="email" class="item">
-                    <div class="error error-email">Пожалуйста, введите email</div>
-                </div>
-                <div class="box-field field">
-                    <input type="tel" placeholder="Номер телефона" id="phone" name="phone" class="item phoneNum">
-                    <p class="error errorN">Пожалуйста, введите номер</p> 
+    <div class="container">
+        <div class="left-side">
+            <div class="background-image"></div>
+            <div class="overlay"></div>
+            <div class="left-content">
+                <img id="logojihc" src="./jihc-logo-ru-png-v3(white).png">
+                <h1>Жамбылский Инновационный Высший Колледж</h1>
+                <div class="college-info">
+                    <p>Это современный колледж, предоставляющий качественное образование в приоритетных сферах.</p>
+                    <p>У нас обучают по направлениям <strong>Информационные технологии</strong> и <strong>Учёт и аудит </strong>.</p>
+                    <p>Наша цель — подготовить квалифицированных, ответственных и инициативных специалистов, готовых к вызовам цифровой эпохи.</p>
                 </div>
             </div>
-            <button type="submit">Отправить</button>
-        </form>
-    </section>
+        </div>
+        <div class="right-side">
+            <section class="contact">
+                <h2>Добро пожаловать!</h2>
+               
+                
+                <form id="form">
+                    <div class="box">
+                        <div class="box-field field">
+                            <input type="text" placeholder="Имя" id="name" name="name" class="item">
+                            <div class="error">Пожалуйста, введите имя</div>
+                        </div>
+                        <div class="box-field field">
+                            <input type="email" placeholder="Email" id="email" name="email" class="item">
+                            <div class="error error-email">Пожалуйста, введите email</div>
+                        </div>
+                        <div class="box-field field">
+                            <input type="tel" placeholder="Номер телефона" id="phone" name="phone" class="item phoneNum">
+                            <p class="error errorN">Пожалуйста, введите номер</p> 
+                        </div>
+                    </div>
+                    <button type="submit">Отправить</button>
+                </form>
+            </section>
+        </div>
+    </div>
         
     <script>
         const form = document.getElementById('form');
