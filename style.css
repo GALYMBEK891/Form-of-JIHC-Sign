@@ -7,54 +7,111 @@
 }
 
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background-color: #0077FF;
     font-family: "Onest", sans-serif;
+    background-color: #f5f5f5;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     padding: 20px;
 }
 
-#logojihc {
-    width: 80px;
-    height: auto;
-    margin-bottom: 10px;
+.container {
+    display: flex;
+    max-width: 1200px;
+    width: 100%;
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
 
+.left-side {
+    flex: 1;
+    color: white;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    min-height: 600px;
+}
+
+.background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('./IMG_3838.JPG');
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 119, 255, 0.526);
+    z-index: 2;
+}
+
+.left-content {
+    max-width: 500px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 3;
+}
+
+.left-side h1 {
+    font-size: 28px;
+    margin-bottom: 30px;
+    line-height: 1.3;
 }
 
 .college-info {
     font-size: 18px;
     line-height: 1.6;
-    color: #333;
     margin-bottom: 30px;
-    text-align: center;
+}
+
+.college-info p {
+    margin-bottom: 15px;
+}
+
+#logojihc {
+    width: 100px;
+    height: auto;
+    margin-bottom: 30px;
+}
+
+.right-side {
+    flex: 1;
+    background-color: white;
+    padding: 50px;
 }
 
 .contact {
-    background-color: white;
-    width: 670px;
-    padding: 30px;
-    border-radius: 30px;
-    box-shadow: 5px 2px 70px 10px rgba(130, 130, 130, 0.483);
+    max-width: 400px;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
-    align-items: center;
-
+    height: 100%;
+    justify-content: center;
 }
 
-
-
 .contact h2 {
-    font-size: clamp(26px, 5vw, 40px);
+    font-size: 28px;
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     color: #333;
 }
 
+
 .contact form {
     width: 100%;
-    text-align: center;
 }
 
 form .box {
@@ -86,13 +143,10 @@ form .box {
 
 .field.error .item {
     border-color: #d93025;
-
 }
-
 
 .field .item::placeholder {
     color: rgba(149, 149, 149, 0.888);
-
 }
 
 .field .item:focus::placeholder {
@@ -100,11 +154,10 @@ form .box {
 }
 
 form button {
-    padding: 12px 32px;
+    padding: 15px 32px;
     background: #0077FF;
     border: none;
     border-radius: 6px;
-    box-shadow: 0 0 10px #0077FF;
     font-size: 16px;
     color: white;
     letter-spacing: 1px;
@@ -116,7 +169,6 @@ form button {
 }
 
 form button:hover {
-    box-shadow: 0 0 15px #0077FF;
     background: #0066DD;
 }
 
@@ -130,62 +182,74 @@ form button:active {
     text-align: left;
     margin-top: 5px;
     display: none;
-
 }
-
-
 
 .field.error .error {
     display: block;
 }
 
-@media (max-width: 768px) {
-    .contact {
-        padding: 25px;
+@media (max-width: 992px) {
+    .container {
+        flex-direction: column;
     }
-
+    
+    .left-side, .right-side {
+        padding: 40px;
+    }
+    
+    .left-content {
+        text-align: center;
+    }
+    
     #logojihc {
-        width: 70px;
+        margin: 0 auto 20px;
     }
+    
+    .left-side {
+        min-height: 400px;
+    }
+}
+
+@media (max-width: 768px) {
+    .left-side, .right-side {
+        padding: 30px;
+    }
+    
+    .left-side h1 {
+        font-size: 24px;
+    }
+    
     .college-info {
         font-size: 16px;
-        padding: 0 10px;
+    }
+    
+    .contact h2 {
+        font-size: 24px;
     }
 }
 
 @media (max-width: 480px) {
-    .contact {
-        padding: 20px;
-        border-radius: 20px;
+    .left-side, .right-side {
+        padding: 25px;
     }
+    
+    #logojihc {
+        width: 80px;
+    }
+    
+    .left-side h1 {
+        font-size: 22px;
+    }
+    
     .college-info {
         font-size: 15px;
-        line-height: 1.5;
     }
-
-    #logojihc {
-        width: 60px;
-    }
-
+    
     .field .item {
         padding: 12px;
     }
-
+    
     form button {
         padding: 12px;
-    }
-}
-
-@media (max-width: 360px) {
-    .contact {
-        padding: 15px;
-    }
-
-    #logojihc {
-        width: 50px;
-    }
-    .college-info {
-        font-size: 14px;
-        margin-bottom: 20px;
     }
 }
