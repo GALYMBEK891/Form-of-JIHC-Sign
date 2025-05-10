@@ -1,341 +1,280 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Onest:wght@100..900&display=swap');
+:root {
+    --primary: #0077FF;
+    --primary-dark: #0055CC;
+    --secondary: #FF6B00;
+    --light: #f8f9fa;
+    --dark: #212529;
+    --gray: #6c757d;
+}
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
-    font-family: "Onest", sans-serif;
     background-color: #f5f5f5;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-
+    color: #333;
+    line-height: 1.6;
 }
 
 .container {
-    display: flex;
     max-width: 1200px;
-    width: 100%;
-    border-radius: 40px;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-
+    margin: 0 auto;
+    padding: 20px;
 }
 
-.left-side {
-    flex: 1;
+header {
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
     color: white;
-    padding: 50px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    position: relative;
-    min-height: 600px;
-    background-color: transparent;
-    
-
-    
-}
-
-.background-image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: url('./IMG_3838.JPG');
-    background-size: cover;
-    background-position: center;
-    z-index: 1;
-    border-radius: 40px;
-    box-shadow: 9px 10px 30px rgba(11, 11, 11, 0.328);
-}
-
-.overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 119, 255, 0.526);
-    z-index: 2;
-    border-radius: 40px;
-}
-
-.left-content {
-    max-width: 500px;
-    margin: 0 auto;
-    position: relative;
-    z-index: 3;
-}
-
-.left-side h1 {
-    font-size: 28px;
-    margin-bottom: 30px;
-    line-height: 1.3;
-}
-
-.college-info {
-    font-size: 18px;
-    line-height: 1.6;
-    margin-bottom: 30px;
-}
-
-.college-info p {
-    margin-bottom: 15px;
-}
-
-#logojihc {
-    width: 100px;
-    height: auto;
-    margin-bottom: 30px;
-}
-
-.right-side {
-    flex: 1;
-    background-color: transparent;
-    padding: 50px;
-}
-
-.contact {
-    max-width: 400px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    justify-content: center;
-}
-
-.contact h2 {
-    font-size: 28px;
+    padding: 60px 20px;
     text-align: center;
-    margin-bottom: 10px;
-    color: #333;
-}
-
-
-.contact form {
-    width: 100%;
-}
-
-form .box {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.field {
     position: relative;
+    overflow: hidden;
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
+    height: 100%;
+    background: url('history.ad964edf.png') center/cover;
+    opacity: 0.2;
+    z-index: 1;
 }
 
-.field .item {
-    width: 100%;
-    padding: 15px;
-    background: transparent;
-    border: 2px solid #0077FF;
-    border-radius: 6px;
-    font-size: 16px;
-    outline: none;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+header .content {
+    position: relative;
+    z-index: 2;
 }
 
-.field .item:focus {
-    border-color: #0055CC;
-    box-shadow: 0 0 0 3px rgba(0, 119, 255, 0.2);
+header img.logo {
+    height: 100px;
+    margin-bottom: 20px;
 }
 
-.field.error .item {
-    border-color: #d93025;
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
 }
 
-.field .item::placeholder {
-    color: rgba(149, 149, 149, 0.888);
+header p {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
-.field .item:focus::placeholder {
-    opacity: 0.5;
-}
-
-form button {
-    padding: 15px 32px;
-    background: #0077FF;
-    border: none;
-    border-radius: 6px;
-    font-size: 16px;
+.register-btn {
+    display: inline-block;
+    background-color: var(--secondary);
     color: white;
-    letter-spacing: 1px;
+    padding: 12px 30px;
+    border-radius: 30px;
+    text-decoration: none;
     font-weight: 600;
     margin-top: 20px;
-    cursor: pointer;
     transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 107, 0, 0.3);
+}
+
+.register-btn:hover {
+    background-color: #e05d00;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 107, 0, 0.4);
+}
+
+.section {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    padding: 40px;
+    margin: 30px 0;
+}
+
+.section-title {
+    color: var(--primary);
+    margin-bottom: 30px;
+    text-align: center;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 3px;
+    background-color: var(--secondary);
+    margin: 15px auto 0;
+}
+
+.history-content {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.history-text {
+    flex: 1;
+}
+
+.history-image {
+    flex: 1;
+    border-radius: 36px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.history-image img {
     width: 100%;
-}
-
-form button:hover {
-    background: #0066DD;
-}
-
-form button:active {
-    transform: scale(0.98);
-}
-
-.field .error {
-    font-size: 14px;
-    color: #d93025;
-    text-align: left;
-    margin-top: 5px;
-    display: none;
-}
-
-.field.error .error {
+    height: auto;
     display: block;
 }
 
+.specialties {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
 
-.back-icon-2 {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    color: #0077FF;
-    font-size: 24px;
-    background: white;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
+.specialty-card {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.specialty-card:hover {
+    transform: translateY(-10px);
+}
+
+.specialty-image {
+    height: 200px;
+    overflow: hidden;
+}
+
+.specialty-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.specialty-card:hover .specialty-image img {
+    transform: scale(1.1);
+}
+
+.specialty-content {
+    padding: 25px;
+    background-color: white;
+}
+
+.specialty-title {
+    color: var(--primary);
+    margin-bottom: 15px;
+    font-size: 1.4rem;
+}
+
+.specialty-features {
+    margin-top: 15px;
+}
+
+.specialty-features p {
+    margin-bottom: 8px;
     display: flex;
     align-items: center;
-    justify-content: center;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    transition: all 0.3s ease;
-    text-decoration: none;
+    gap: 8px;
 }
 
-.back-icon-2:hover {
-    background: #0077FF;
-    color: white;
-    transform: scale(1.1);
+.specialty-features i {
+    color: var(--primary);
+    font-size: 0.9em;
 }
 
-.contact {
-    position: relative; /* Add this to make absolute positioning work for the icon */
+.documents-list {
+    margin-top: 30px;
 }
-.back-icon {
 
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    color: #0077FF;
-    font-size: 24px;
-    background: white;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    display: none;
+.documents-list h3 {
+    color: var(--primary);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.documents-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.document-item {
+    background-color: var(--light);
+    padding: 20px;
+    border-radius: 8px;
+    display: flex;
     align-items: center;
-    justify-content: center;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    transition: all 0.3s ease;
-    text-decoration: none;
-    z-index: 4;
+    gap: 15px;
 }
 
-.back-icon:hover {
-    background: #0077FF;
+.document-icon {
+    color: var(--primary);
+    font-size: 1.5rem;
+}
+
+.text-center {
+    text-align: center;
+    margin-top: 30px;
+}
+
+footer {
+    background-color: var(--primary);
     color: white;
-    transform: scale(1.1);
+    text-align: center;
+    padding: 30px 20px;
+    margin-top: 50px;
+}
+
+.contact-info {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin: 20px 0;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
 
-@media (max-width: 992px) {
-    .back-icon-2{
-        display: none;
-    }
-    .back-icon {
-        display: flex;
-        left: 20px;
-        right: auto;
-        top: 20px;
-        background: rgba(255,255,255,0.8);
-    }
-    
-    .container {
-        position: relative;
-    }
-}
 
-
-.left-side {
-    position: relative;
-}
-
-@media (max-width: 992px) {
-    .container {
+@media (max-width: 768px) {
+    .history-content {
         flex-direction: column;
     }
     
-    .left-side, .right-side {
-        padding: 40px;
-    }
-    
-    .left-content {
+    .history-text {
         text-align: center;
     }
     
-    #logojihc {
-        margin: 0 auto 20px;
+    .specialties {
+        grid-template-columns: 1fr;
     }
     
-    .left-side {
-        min-height: 400px;
+    .contact-info {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
     }
-}
+    
+    header h1 {
+        font-size: 2rem;
+    }
+    
 
-@media (max-width: 768px) {
-    .left-side, .right-side {
-        padding: 30px;
-    }
-    
-    .left-side h1 {
-        font-size: 24px;
-    }
-    
-    .college-info {
-        font-size: 16px;
-    }
-    
-    .contact h2 {
-        font-size: 24px;
-    }
-}
-
-@media (max-width: 480px) {
-    .left-side, .right-side {
-        padding: 25px;
-    }
-    
-    #logojihc {
-        width: 80px;
-    }
-    
-    .left-side h1 {
-        font-size: 22px;
-    }
-    
-    .college-info {
-        font-size: 15px;
-    }
-    
-    .field .item {
-        padding: 12px;
-    }
-    
-    form button {
-        padding: 12px;
-    }
 }
