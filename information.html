@@ -5,13 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Form of the JIHC</title>
     <link rel="stylesheet" href="./information.css">
-   
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
 </head>
 <body>
     <div class="container">
         <div class="left-side">
+            <div class="language-switcher-1">
+                <button class="lang-btn-1" id="lang-ru-1">Рус</button>
+                <button class="lang-btn-1" id="lang-kz-1">Қаз</button>
+            </div>
             <a href="index.html" class="back-icon" title="Back to Information">
                 <i class="fas fa-arrow-left"></i>
             </a>
@@ -19,43 +21,47 @@
             <div class="overlay"></div>
             <div class="left-content">
                 <img id="logojihc" src="./jihc-logo-ru-png-v3(white).png">
-                <h1>Жамбылский Инновационный Высший Колледж</h1>
+                <h1 class="translate" data-key="college_name">Жамбылский Инновационный Высший Колледж</h1>
                 <div class="college-info">
-                    <p>Это современный колледж, предоставляющий качественное образование в приоритетных сферах.</p>
-                    <p>У нас обучают по направлениям <strong>Информационные технологии</strong> и <strong>Учёт и аудит </strong>.</p>
-                    <p>Наша цель — подготовить квалифицированных, ответственных и инициативных специалистов, готовых к вызовам цифровой эпохи.</p>
+                    <p class="translate" data-key="college_info_1">Это современный колледж, предоставляющий качественное образование в приоритетных сферах.</p>
+                    <p class="translate" data-key="college_info_2">У нас обучают по направлениям <strong>Информационные технологии</strong> и <strong>Учёт и аудит </strong>.</p>
+                    <p class="translate" data-key="college_info_3">Наша цель — подготовить квалифицированных, ответственных и инициативных специалистов, готовых к вызовам цифровой эпохи.</p>
                 </div>
             </div>
         </div>
         <div class="right-side">
             <section class="contact">
+                <div class="language-switcher">
+                    <button class="lang-btn" id="lang-ru">Рус</button>
+                    <button class="lang-btn" id="lang-kz">Қаз</button>
+                </div>
                 <a href="index.html" class="back-icon-2" title="Back to Information">
                     <i class="fas fa-arrow-left"></i>
                 </a>
-                <h2>Добро пожаловать!</h2>
+                <h2 class="translate" data-key="welcome">Добро пожаловать!</h2>
                 
                 <form id="form">
                     <div class="box">
                         <div class="box-field field">
-                            <input type="text" placeholder="Имя" id="name" name="name" class="item">
-                            <div class="error">Пожалуйста, введите имя</div>
+                            <input type="text" placeholder="Имя" id="name" name="name" class="item translate" data-key="name_placeholder">
+                            <div class="error translate" data-key="name_error">Пожалуйста, введите имя</div>
                         </div>
                         <div class="box-field field">
-                            <input type="email" placeholder="Email" id="email" name="email" class="item">
-                            <div class="error error-email">Пожалуйста, введите email</div>
+                            <input type="email" placeholder="Email" id="email" name="email" class="item translate" data-key="email_placeholder">
+                            <div class="error error-email translate" data-key="email_error">Пожалуйста, введите email</div>
                         </div>
                         <div class="box-field field">
-                            <input type="tel" placeholder="Номер телефона" id="phone" name="phone" class="item phoneNum">
-                            <p class="error errorN">Пожалуйста, введите номер</p> 
+                            <input type="tel" placeholder="Номер телефона" id="phone" name="phone" class="item phoneNum translate" data-key="phone_placeholder">
+                            <p class="error errorN translate" data-key="phone_error">Пожалуйста, введите номер</p> 
                         </div>
                     </div>
-                    <button type="submit">Отправить</button>
+                    <button type="submit" class="translate" data-key="submit_btn">Отправить</button>
                 </form>
             </section>
         </div>
     </div>
         
-    <!-- Rest of your script remains unchanged -->
+<script src="./translation.js"></script>
     <script>
         const form = document.getElementById('form');
         const name = document.getElementById('name');

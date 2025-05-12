@@ -228,7 +228,7 @@ form button:active {
 .back-icon {
 
     position: absolute;
-    top: 20px;
+    top: 1px;
     right: 20px;
     color: #0077FF;
     font-size: 24px;
@@ -250,31 +250,168 @@ form button:active {
     color: white;
     transform: scale(1.1);
 }
+.language-switcher-1 {
+    position: absolute;
+    top: 10px;
+    left: 30px;
+    display: none;
+    gap: 12px;
+    z-index: 10;
+    background-color: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    padding: 8px;
+    border-radius: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+.language-switcher {
+    position: absolute;
+    top:10px;
+    left: 0;
+    display: flex;
+    gap: 12px;
+    z-index: 10;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 8px;
+    border-radius: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(0, 119, 255, 0.1);
+}
+
+.lang-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    background-color: transparent;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    font-size: 0.95rem;
+    min-width: 70px;
+    text-align: center;
+}
 
 
-@media (max-width: 992px) {
-    .back-icon-2{
-        display: none;
-    }
-    .back-icon {
-        display: flex;
-        left: 20px;
-        right: auto;
-        top: 20px;
-        background: rgba(255,255,255,0.8);
+.lang-btn, .lang-btn-1 {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    background-color: transparent;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    font-size: 0.95rem;
+    min-width: 70px;
+    text-align: center;
+}
+
+.language-switcher-1 .lang-btn-1 {
+    color: white;
+}
+
+.language-switcher-1 .lang-btn-1 {
+    color: white;
+}
+
+.language-switcher-1 .lang-btn-1:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.language-switcher-1 .lang-btn-1.active {
+    background-color: #0077ff33;
+    color: var(--primary);
+}
+
+.language-switcher .lang-btn {
+    color: var(--primary);
+}
+
+.language-switcher .lang-btn:hover {
+    background-color: rgba(0, 119, 255, 0.1);
+}
+
+.language-switcher .lang-btn.active {
+    background-color: #0077ff33;
+    color: rgb(0, 0, 0);
+}
+
+.lang-btn-1:hover {
+    background-color: rgba(0, 119, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+.lang-btn-1.active {
+    background-color: var(--primary);
+    color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    font-weight: 700;
+}
+
+
+@keyframes langSwitch {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.lang-btn.active {
+    animation: langSwitch 0.3s ease;
+}
+
+.lang-btn:not(.active):hover {
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.back-icon-2 {
+    right: 20px;
+}
+
+@media (max-width: 1200px) {
+    
+    .language-switcher {
+       top: 10px;
+       left: 0;
     }
     
-    .container {
-        position: relative;
+    .left-side h1, .contact h2 {
+        font-size: 26px;
+    }
+    
+    .college-info {
+        font-size: 17px;
+    }
+    .back-icon{
+        top: 5px;
     }
 }
 
-
-.left-side {
-    position: relative;
-}
-
 @media (max-width: 992px) {
+    .language-switcher-1 {
+        display: flex;
+        left: auto;
+        right: 30px;
+        top: 30px;
+        background-color: rgba(255, 255, 255, 0.143);
+        border: 1px solid rgba(0, 119, 255, 0.1);
+    }
+    
+    .lang-btn-1 {
+        color: var(--primary);
+    }
+    
+    .lang-btn-1:hover {
+        background-color: rgba(0, 119, 255, 0.1);
+    }
+    
+    .lang-btn-1.active {
+        background-color: var(--primary);
+        color: white;
+    }
+    .language-switcher{
+        display: none;
+    }
+
     .container {
         flex-direction: column;
     }
@@ -294,14 +431,36 @@ form button:active {
     .left-side {
         min-height: 400px;
     }
+    
+    .back-icon-2 {
+        display: none;
+    }
+    
+    .back-icon {
+        display: flex;
+        left: 20px;
+        right: auto;
+        top: 20px;
+    }
 }
 
 @media (max-width: 768px) {
+    .language-switcher-1 {
+        top: 20px;
+        left: auto;
+        padding: 6px;
+    }
+    
+    .lang-btn-1 {
+        padding: 8px 15px;
+        min-width: 60px;
+    }
+   
     .left-side, .right-side {
         padding: 30px;
     }
     
-    .left-side h1 {
+    .left-side h1, .contact h2 {
         font-size: 24px;
     }
     
@@ -309,33 +468,73 @@ form button:active {
         font-size: 16px;
     }
     
-    .contact h2 {
-        font-size: 24px;
+    .field .item {
+        padding: 14px;
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 576px) {
+    .language-switcher-1 {
+        top: 15px;
+        left: auto;
+        flex-direction: column;
+        gap: 8px;
+
+    }
+    
+    .lang-btn-1 {
+        padding:  9px;
+        font-size: 0.85rem;
+    }
+    
     .left-side, .right-side {
-        padding: 25px;
+        padding: 25px 20px;
+    }
+    
+    .left-side h1, .contact h2 {
+        font-size: 22px;
     }
     
     #logojihc {
         width: 80px;
     }
     
-    .left-side h1 {
-        font-size: 22px;
-    }
-    
     .college-info {
         font-size: 15px;
     }
     
-    .field .item {
+    form button {
         padding: 12px;
     }
     
-    form button {
-        padding: 12px;
+    .back-icon {
+        top: 15px;
+        left: 15px;
+    }
+}
+
+@media (max-width: 400px) {
+    .language-switcher-1 {
+        top: 10px;
+        left: auto;
+        right: 10px;
+        gap: 5px;
+    }
+    
+    .lang-btn-1 {
+        padding:  7px;
+        min-width: 55px;
+    }
+  
+    .left-side, .right-side {
+        padding: 20px 15px;
+    }
+    
+    .left-side h1, .contact h2 {
+        font-size: 20px;
+    }
+    
+    .college-info {
+        font-size: 14px;
     }
 }
